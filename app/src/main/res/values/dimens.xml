@@ -1,5 +1,50 @@
 <resources>
+
+    <!-- 页面的横向间距 -->
+    <dimen name="activity_padding_horizontal">13dp</dimen>
+    <dimen name="activity_padding_horizontal_">-13dp</dimen>
+
+    <!-- 圆角半径 -->
+    <dimen name="rectangle_corner_radius">4dp</dimen>
+
+    <!-- title bar dimens -->
+    <dimen name="title_bar_height_inner">46dp</dimen>
+    <dimen name="title_bar_height">47dp</dimen>
+    <dimen name="title_button_width">56dp</dimen>
+
+    <!-- bottom bar dimens -->
+    <dimen name="bottom_bar_height">48dp</dimen>
+    <dimen name="bottom_bar_indicator_icon_size">22dp</dimen>
+
+    <!-- button dimens -->
+    <dimen name="button_default_height_large">44dp</dimen>
+
+    <!-- scroll bar width -->
+    <dimen name="scrollbar_thumb_width">3dp</dimen>
+
+    <!-- text size -->
+    <dimen name="tsize_72px">25sp</dimen>
+    <dimen name="tsize_69px">24sp</dimen>
+    <dimen name="tsize_66px">23sp</dimen>
+    <dimen name="tsize_63px">22sp</dimen>
+    <dimen name="tsize_60px">21sp</dimen>
+    <dimen name="tsize_57px">20sp</dimen>
+    <dimen name="tsize_54px">19sp</dimen>
+    <dimen name="tsize_51px">18sp</dimen>
+    <dimen name="tsize_48px">17sp</dimen>
+    <dimen name="tsize_45px">16sp</dimen>
+    <dimen name="tsize_42px">15sp</dimen>
+    <dimen name="tsize_39px">14sp</dimen>
+    <dimen name="tsize_36px">13sp</dimen>
+    <dimen name="tsize_33px">12sp</dimen>
+    <dimen name="tsize_30px">11sp</dimen>
+    <dimen name="tsize_27px">10sp</dimen>
+    <dimen name="tsize_24px">9sp</dimen>
+    <dimen name="tsize_21px">8sp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tsize_title">16sp</dimen>
+    <dimen name="button_default_tsize_large">17sp</dimen>
+
 </resources>

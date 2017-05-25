@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <!-- blue -->
+    <color name="app_blue">#008CFF</color>
+
+    <color name="text_gray_lighter">#999999</color>
+    <color name="text_gray">#666666</color>
+    <color name="text_black_lighter">#333333</color>
+
+    <!-- gray -->
+    <color name="app_gray_deep">#323232</color>
+    <color name="app_gray">#999999</color>
+    <color name="app_gray_light">#C0C0C0</color>
+    <color name="app_gray_lighter">#F5F5F5</color>
+    <color name="app_swboff_color">#D2D2D2</color>
+
+    <!-- orange -->
+    <color name="app_orange">#FF6000</color>
+
+    <!-- pink -->
+    <color name="app_pink">#E6564E</color>
+
+    <!-- yellow -->
+    <color name="app_yellow">#ffdd00</color>
+
+    <!-- status bar color -->
+    <color name="app_status_bar_color">#2b2b2b</color>
+    <!--<color name="app_status_bar_color">#ff0000</color>-->
+    <color name="app_title_bar_background">#2b2b2b</color>
+
+    <!-- app colors -->
+    <color name="app_gray_background">#F5F5F5</color>
+    <color name="app_progress_bar_color">#ff6000</color>
+    <color name="app_scroll_bar_color">#ff6000</color>
+    <color name="app_black_transparent">#d0000000</color>
+    <color name="mark_cinema">#4f4d45</color>
+    <color name="bg_seat_small">#70000000</color>
+    <color name="divider_default">#eaeaea</color>
+    <color name="tcolor_hint_default">#999999</color>
+    <color name="pressed_color_for_white">#fafafa</color>
+
+    <!-- homepage tab text color -->
+    <color name="home_tab_background">#434343</color>
+    <color name="home_tab_checked">#ffffff</color>
+    <color name="home_tab_normal">#979797</color>
+
+    <!-- title bar button pressed color -->
+    <color name="title_bar_button_pressed">#30999999</color>
+
+    <!-- -->
+
+    <color name="line_color_default">#4d4d4d</color>
+    <color name="login_submit_default_color">#cccccc</color>
+    <color name="colorOverlay">#50696969</color>
+
 </resources>

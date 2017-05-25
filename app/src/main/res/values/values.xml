@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr format="reference" name="SwipeBackLayoutStyle"/>
+    <attr name="clearableEditTextStyle"/>
+    <attr name="kokozuProgressBarStyle"/>
+    <color name="aliceblue">#F0F8FF</color>
+    <color name="antiquewhite">#FAEBD7</color>
+    <color name="aqua">#00FFFF</color>
+    <color name="aquamarine">#7FFFD4</color>
+    <color name="azure">#F0FFFF</color>
+    <color name="beige">#F5F5DC</color>
+    <color name="bisque">#FFE4C4</color>
+    <color name="black">#000000</color>
+    <color name="blanchedalmond">#FFEBCD</color>
+    <color name="blue">#0000FF</color>
+    <color name="blueviolet">#8A2BE2</color>
+    <color name="brown">#A52A2A</color>
+    <color name="burlywood">#DEB887</color>
+    <color name="cadetblue">#5F9EA0</color>
+    <color name="chartreuse">#7FFF00</color>
+    <color name="chocolate">#D2691E</color>
+    <color name="coral">#FF7F50</color>
+    <color name="cornflowerblue">#6495ED</color>
+    <color name="cornsilk">#FFF8DC</color>
+    <color name="crimson">#DC143C</color>
+    <color name="darkblue">#00008B</color>
+    <color name="darkcyan">#008B8B</color>
+    <color name="darkgoldenrod">#B8860B</color>
+    <color name="darkgray">#A9A9A9</color>
+    <color name="darkgreen">#006400</color>
+    <color name="darkkhaki">#BDB76B</color>
+    <color name="darkmagenta">#8B008B</color>
+    <color name="darkolivegreen">#556B2F</color>
+    <color name="darkorange">#FF8C00</color>
+    <color name="darkorchid">#9932CC</color>
+    <color name="darkred">#8B0000</color>
+    <color name="darksalmon">#E9967A</color>
+    <color name="darkseagreen">#8FBC8F</color>
+    <color name="darkslateblue">#483D8B</color>
+    <color name="darkslategray">#2F4F4F</color>
+    <color name="darkturquoise">#00CED1</color>
+    <color name="darkviolet">#9400D3</color>
+    <color name="deeppink">#FF1493</color>
+    <color name="deepskyblue">#00BFFF</color>
+    <color name="dimgray">#696969</color>
+    <color name="dodgerblue">#1E90FF</color>
+    <color name="firebrick">#B22222</color>
+    <color name="floralwhite">#FFFAF0</color>
+    <color name="forestgreen">#228B22</color>
+    <color name="gainsboro">#DCDCDC</color>
+    <color name="ghostwhite">#F8F8FF</color>
+    <color name="gold">#FFD700</color>
+    <color name="goldenrod">#DAA520</color>
+    <color name="gray">#808080</color>
+    <color name="green">#00FF00</color>
+    <color name="greenyellow">#ADFF2F</color>
+    <color name="honeydew">#F0FFF0</color>
+    <color name="hotpink">#FF69B4</color>
+    <color name="indianred">#CD5C5C</color>
+    <color name="indigo">#4B0082</color>
+    <color name="ivory">#FFFFF0</color>
+    <color name="khaki">#F0E68C</color>
+    <color name="lavender">#E6E6FA</color>
+    <color name="lavenderblush">#FFF0F5</color>
+    <color name="lawngreen">#7CFC00</color>
+    <color name="lemonchiffon">#FFFACD</color>
+    <color name="lightblue">#ADD8E6</color>
+    <color name="lightcoral">#F08080</color>
+    <color name="lightcyan">#E0FFFF</color>
+    <color name="lightgoldenrodyellow">#FAFAD2</color>
+    <color name="lightgray">#D3D3D3</color>
+    <color name="lightgreen">#90EE90</color>
+    <color name="lightpink">#FFB6C1</color>
+    <color name="lightsalmon">#FFA07A</color>
+    <color name="lightseagreen">#20B2AA</color>
+    <color name="lightskyblue">#87CEFA</color>
+    <color name="lightslategray">#778899</color>
+    <color name="lightsteelblue">#B0C4DE</color>
+    <color name="lightyellow">#FFFFE0</color>
+    <color name="limegreen">#32CD32</color>
+    <color name="linen">#FAF0E6</color>
+    <color name="magenta">#800080</color>
+    <color name="maroon">#800000</color>
+    <color name="mask_progress_tcolor">#ffffff</color>
+    <color name="mediumaquamarine">#66CDAA</color>
+    <color name="mediumblue">#0000CD</color>
+    <color name="mediumorchid">#BA55D3</color>
+    <color name="mediumpurple">#9370DB</color>
+    <color name="mediumseagreen">#3CB371</color>
+    <color name="mediumslateblue">#7B68EE</color>
+    <color name="mediumspringgreen">#00FA9A</color>
+    <color name="mediumturquoise">#48D1CC</color>
+    <color name="mediumvioletred">#C71585</color>
+    <color name="midnightblue">#191970</color>
+    <color name="mintcream">#F5FFFA</color>
+    <color name="mistyrose">#FFE4E1</color>
+    <color name="moccasin">#FFE4B5</color>
+    <color name="navajowhite">#FFDEAD</color>
+    <color name="navy">#000080</color>
+    <color name="oldlace">#FDF5E6</color>
+    <color name="olive">#808000</color>
+    <color name="olivedrab">#6B8E23</color>
+    <color name="orange">#FFA500</color>
+    <color name="orangered">#FF4500</color>
+    <color name="orchid">#DA70D6</color>
+    <color name="palegoldenrod">#EEE8AA</color>
+    <color name="palegreen">#98FB98</color>
+    <color name="paleturquoise">#AFEEEE</color>
+    <color name="palevioletred">#DB7093</color>
+    <color name="papayawhip">#FFEFD5</color>
+    <color name="peachpuff">#FFDAB9</color>
+    <color name="peru">#CD853F</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="plum">#DDA0DD</color>
+    <color name="powderblue">#B0E0E6</color>
+    <color name="purple">#FF00FF</color>
+    <color name="red">#FF0000</color>
+    <color name="rosybrown">#BC8F8F</color>
+    <color name="royalblue">#4169E1</color>
+    <color name="saddlebrown">#8B4513</color>
+    <color name="salmon">#FA8072</color>
+    <color name="sandybrown">#F4A460</color>
+    <color name="seagreen">#2E8B57</color>
+    <color name="seashell">#FFF5EE</color>
+    <color name="sienna">#A0522D</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="skyblue">#87CEEB</color>
+    <color name="slateblue">#6A5ACD</color>
+    <color name="slategray">#708090</color>
+    <color name="snow">#FFFAFA</color>
+    <color name="springgreen">#00FF7F</color>
+    <color name="steelblue">#4682B4</color>
+    <color name="tan">#D2B48C</color>
+    <color name="teal">#008080</color>
+    <color name="thistle">#D8BFD8</color>
+    <color name="tomato">#FF6347</color>
+    <color name="transparent">#00000000</color>
+    <color name="turquoise">#40E0D0</color>
+    <color name="violet">#EE82EE</color>
+    <color name="wheat">#F5DEB3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="whitesmoke">#F5F5F5</color>
+    <color name="yellow">#FFFF00</color>
+    <declare-styleable name="ArrowView"><attr format="reference|color" name="arrowColor"/><attr format="dimension" name="arrowWidth"/><attr format="integer" name="arrowDirection">
+            <enum name="left" value="1"/>
+            <enum name="up" value="2"/>
+            <enum name="right" value="3"/>
+            <enum name="down" value="4"/>
+        </attr><attr format="integer" name="arrowAngle"/><attr format="boolean" name="arrowHasShaft"/></declare-styleable>
+    <declare-styleable name="AutoScaleTextView"><attr format="dimension" name="minTextSize"/></declare-styleable>
+    <declare-styleable name="BannerLayout"><attr format="dimension|reference" name="vpi_height"/></declare-styleable>
+    <declare-styleable name="CircleImageView"><attr format="color|reference" name="shadeColor"/><attr format="color|reference" name="borderColor"/><attr format="dimension" name="circleBorderWidth"/><attr format="dimension" name="borderPadding"/><attr format="dimension" name="roundRadius"/></declare-styleable>
+    <declare-styleable name="CirclePageIndicator"><attr name="android:orientation"/><attr format="boolean" name="vpi_centered"/><attr format="color|reference" name="vpi_fillColor"/><attr format="color|reference" name="vpi_pageColor"/><attr format="dimension|reference" name="vpi_radius"/><attr format="float" name="vpi_circle_space"/><attr format="float" name="vpi_selected_radius_scale"/><attr format="color|reference" name="vpi_strokeColor"/><attr format="dimension|reference" name="vpi_strokeWidth"/></declare-styleable>
+    <declare-styleable name="ClearableEditText"><attr format="reference" name="clearButton"/><attr format="reference" name="passwdShowButton"/><attr format="reference" name="passwdHideButton"/><attr format="boolean" name="passwdInput"/></declare-styleable>
+    <declare-styleable name="DashLine"><attr format="dimension" name="dl_dashGap"/><attr format="dimension" name="dl_dashWidth"/><attr format="color|reference" name="dl_lineColor"/></declare-styleable>
+    <declare-styleable name="EcoGallery"><attr format="integer" name="ecogl_gravity"/><attr format="integer" name="ecogl_animationDuration"/><attr format="float" name="ecogl_unselectedAlpha"/><attr format="dimension|reference" name="ecogl_spacing"/><attr format="reference" name="ecogl_entries"/><attr format="float" name="ecogl_selectedScale"/></declare-styleable>
+    <declare-styleable name="FlatComButton"><attr format="reference" name="imageDrawable"/><attr format="dimension" name="imageWidth"/><attr format="dimension" name="imageHeight"/></declare-styleable>
+    <declare-styleable name="FlatWidget"><attr format="boolean" name="flatSelectorEnabled"/><attr format="color" name="flatColor"/><attr format="color" name="flatShadowColor"/><attr format="dimension" name="flatCornerRadius"/><attr format="dimension" name="flatBorderWidth"/><attr format="color" name="flatBorderColor"/><attr format="color" name="flatBorderShadowColor"/><attr format="color" name="flatUnableColor"/><attr format="color" name="flatUnableBorderColor"/></declare-styleable>
+    <declare-styleable name="FlipLayout"><attr format="reference" name="flip_originView"/><attr format="reference" name="flip_flipedView"/><attr format="boolean" name="flip_isAnimated"/><attr format="boolean" name="flip_isFlipped"/><attr format="integer" name="flip_flipDuration"/><attr format="reference" name="flip_flipInterpolator"/><attr name="flip_flipRotations">
+            <flag name="none" value="0"/>
+            <flag name="x" value="1"/>
+            <flag name="y" value="2"/>
+            <flag name="z" value="4"/>
+        </attr><attr format="boolean" name="flip_reverseRotation"/></declare-styleable>
+    <declare-styleable name="JustifyTextView"><attr format="boolean" name="jtvForceJustify"/><attr format="integer" name="jtvMaxLine"/></declare-styleable>
+    <declare-styleable name="LineTabLayout"><attr format="integer" name="tab_textGravity">
+            <enum name="center" value="0"/>
+            <enum name="distribute" value="1"/>
+        </attr><attr format="dimension|reference" name="tab_lineWidth"/><attr format="dimension|reference" name="tab_linePaddingLeftRight"/><attr format="dimension|reference" name="tab_linePaddingBottom"/></declare-styleable>
+    <declare-styleable name="MaskImageLayout"><attr format="reference" name="mask_defaultDrawable"/><attr format="reference" name="mask_layoutId"/></declare-styleable>
+    <declare-styleable name="MaterialCheckBox"><attr format="reference|dimension" name="material_cb_width"/><attr format="reference|dimension" name="material_cb_height"/><attr format="reference|dimension" name="material_cb_boxSize"/><attr format="reference|dimension" name="material_cb_cornerRadius"/><attr format="reference|dimension" name="material_cb_strokeSize"/><attr format="reference|color" name="material_cb_strokeColor"/><attr format="reference|color" name="material_cb_tickColor"/><attr format="reference|integer" name="material_cb_animDuration"/></declare-styleable>
+    <declare-styleable name="MaterialRadioButton"><attr format="reference|dimension" name="material_rb_width"/><attr format="reference|dimension" name="material_rb_height"/><attr format="reference|dimension" name="material_rb_strokeSize"/><attr format="reference|dimension" name="material_rb_radius"/><attr format="reference|dimension" name="material_rb_innerRadius"/><attr format="reference|color" name="material_rb_strokeColor"/><attr format="reference|integer" name="material_rb_animDuration"/></declare-styleable>
+    <declare-styleable name="MaterialRadioGroup"><attr name="android:checkedButton"/><attr name="android:orientation"/></declare-styleable>
+    <declare-styleable name="ProgressBar"><attr name="android:indeterminate"/><attr format="integer" name="pb_shape">
+            <enum name="oval" value="1"/>
+            <enum name="line" value="2"/>
+        </attr><attr format="color" name="pb_backgroundColor"/><attr format="color|reference" name="pb_strokeColor"/><attr format="dimension" name="pb_strokeWidth"/></declare-styleable>
+    <declare-styleable name="RectangleTabLayout"><attr format="dimension|reference" name="tab_borderWidth"/><attr format="dimension|reference" name="tab_cornerRadius"/></declare-styleable>
+    <declare-styleable name="RippleBackground"><attr format="color" name="rb_color"/><attr format="dimension" name="rb_strokeWidth"/><attr format="dimension" name="rb_radius"/><attr format="integer" name="rb_duration"/><attr format="integer" name="rb_rippleAmount"/><attr format="float" name="rb_scale"/><attr format="enum" name="rb_type">
+            <enum name="fillRipple" value="0"/>
+            <enum name="strokeRipple" value="1"/>
+        </attr></declare-styleable>
+    <declare-styleable name="RotateImageView"><attr format="float" name="degree"/></declare-styleable>
+    <declare-styleable name="ScoreView"><attr format="reference" name="fullDrawable"/><attr format="reference" name="halfDrawable"/><attr format="reference" name="noneDrawable"/><attr format="integer" name="scoreGravity">
+            <enum name="left" value="1"/>
+            <enum name="center" value="2"/>
+            <enum name="right" value="3"/>
+        </attr><attr format="dimension" name="paddingDrawable"/><attr format="float" name="scoreMax"/><attr format="integer" name="scoreCount"/><attr format="float" name="score"/></declare-styleable>
+    <declare-styleable name="SearchBar"><attr format="reference" name="searchDrawable"/><attr format="dimension|reference" name="searchDrawableWidth"/><attr format="dimension|reference" name="searchDrawableHeight"/><attr format="string" localization="suggested" name="searchHint"/><attr format="color" name="searchHintColor"/><attr format="color" name="searchTextColor"/><attr format="reference" name="searchClearButton"/><attr format="dimension|reference" name="searchTextSize"/><attr format="reference" name="searchButtonBackground"/><attr format="color" name="searchButtonTextColor"/><attr format="reference" name="searchEditBackground"/></declare-styleable>
+    <declare-styleable name="Slider"><attr name="android:enabled"/><attr format="reference|color" name="slider_primaryColor"/><attr format="reference|color" name="slider_secondaryColor"/><attr format="reference|dimension" name="slider_trackSize"/><attr format="reference|integer" name="slider_value"/><attr format="reference|integer" name="slider_minValue"/><attr format="reference|integer" name="slider_maxValue"/><attr format="reference|integer" name="slider_stepValue"/><attr format="integer" name="slider_thumbType">
+            <enum name="oval" value="0"/>
+            <enum name="rectangle" value="1"/>
+        </attr><attr format="reference|dimension" name="slider_thumbRadius"/><attr format="reference|dimension" name="slider_thumbWidth"/><attr format="reference|dimension" name="slider_thumbHeight"/></declare-styleable>
+    <declare-styleable name="SoundWaveView"><attr format="dimension" name="swv_strokeWidth"/><attr format="boolean" name="swv_reverse"/><attr format="float" name="swv_angle"/><attr format="dimension" name="swv_startRadius"/><attr format="color" name="swv_strokeColor"/></declare-styleable>
+    <declare-styleable name="StarView"><attr format="color" name="star_fullColor"/><attr format="color" name="star_blankColor"/><attr format="integer" name="star_count"/><attr format="integer" name="star_max"/><attr format="float" name="star_score"/><attr format="dimension" name="star_strokeWidth"/><attr format="integer" name="star_type">
+            <enum name="stroke" value="1"/>
+            <enum name="fill" value="2"/>
+        </attr></declare-styleable>
+    <declare-styleable name="SwipeBackLayout"><attr format="dimension" name="swlEdgeSize"/><attr format="reference" name="swlShadow"/></declare-styleable>
+    <declare-styleable name="SwitchButton"><attr format="reference|color" name="swb_thumbColor"/><attr format="reference|color" name="swb_onColor"/><attr format="reference|color" name="swb_offColor"/><attr format="reference|color" name="swb_offBorderColor"/><attr format="dimension" name="swb_borderWidth"/></declare-styleable>
+    <declare-styleable name="TabLayout"><attr name="android:textSize"/><attr name="android:textColor"/><attr format="string|reference" name="tab_tabs"/><attr format="color|reference" name="tab_tabColors"/></declare-styleable>
+    <declare-styleable name="TextAppearance"><attr name="android:textColorHighlight"/><attr name="android:textColor"/><attr name="android:textColorHint"/><attr name="android:textColorLink"/><attr name="android:textSize"/><attr name="android:textStyle"/><attr name="android:typeface"/><attr name="android:fontFamily"/><attr name="android:textAllCaps"/><attr name="android:shadowColor"/><attr name="android:shadowDx"/><attr name="android:shadowDy"/><attr name="android:shadowRadius"/><attr name="android:elegantTextHeight"/><attr name="android:fontFeatureSettings"/><attr name="android:letterSpacing"/></declare-styleable>
+    <declare-styleable name="TextView"><attr name="android:drawableBottom"/><attr name="android:drawableEnd"/><attr name="android:drawableLeft"/><attr name="android:drawablePadding"/><attr name="android:drawableRight"/><attr name="android:drawableStart"/><attr name="android:drawableTop"/><attr name="android:fontFamily"/><attr name="android:elegantTextHeight"/><attr name="android:fontFeatureSettings"/><attr name="android:gravity"/><attr name="android:lines"/><attr name="android:letterSpacing"/><attr name="android:lineSpacingExtra"/><attr name="android:lineSpacingMultiplier"/><attr name="android:height"/><attr name="android:ems"/><attr name="android:width"/><attr name="android:includeFontPadding"/><attr name="android:cursorVisible"/><attr name="android:maxEms"/><attr name="android:maxHeight"/><attr name="android:maxLength"/><attr name="android:maxLines"/><attr name="android:maxWidth"/><attr name="android:minEms"/><attr name="android:minHeight"/><attr name="android:minLines"/><attr name="android:minWidth"/><attr name="android:scrollHorizontally"/><attr name="android:shadowColor"/><attr name="android:shadowDx"/><attr name="android:shadowDy"/><attr name="android:shadowRadius"/><attr name="android:singleLine"/><attr name="android:textAllCaps"/><attr name="android:textColor"/><attr name="android:textColorHighlight"/><attr name="android:textColorHint"/><attr name="android:textColorLink"/><attr name="android:textScaleX"/><attr name="android:textSize"/><attr name="android:textStyle"/><attr name="android:typeface"/></declare-styleable>
+    <declare-styleable name="TextViewAppearance"><attr name="android:textAppearance"/></declare-styleable>
+    <declare-styleable name="TriangleView"><attr format="reference|color" name="triv_color"/><attr format="integer" name="triv_direction">
+            <enum name="left" value="1"/>
+            <enum name="up" value="2"/>
+            <enum name="right" value="3"/>
+            <enum name="down" value="4"/>
+        </attr><attr format="color" name="triv_borderColor"/><attr format="dimension" name="triv_borderWidth"/><attr format="boolean" name="triv_borderClosed"/></declare-styleable>
+    <declare-styleable name="View"><attr name="android:background"/><attr name="android:backgroundTint"/><attr name="android:backgroundTintMode"/><attr name="android:elevation"/><attr name="android:fadeScrollbars"/><attr name="android:fadingEdgeLength"/><attr name="android:minHeight"/><attr name="android:minWidth"/><attr name="android:padding"/><attr name="android:paddingBottom"/><attr name="android:paddingEnd"/><attr name="android:paddingLeft"/><attr name="android:paddingRight"/><attr name="android:paddingStart"/><attr name="android:paddingTop"/><attr name="android:requiresFadingEdge"/><attr name="android:scrollbarDefaultDelayBeforeFade"/><attr name="android:scrollbarFadeDuration"/><attr name="android:scrollbarSize"/><attr name="android:scrollbarStyle"/><attr name="android:soundEffectsEnabled"/><attr name="android:textAlignment"/><attr name="android:textDirection"/><attr name="android:visibility"/><attr name="android:layoutDirection"/></declare-styleable>
+    <declare-styleable name="WebViewImprove"><attr format="boolean" name="web_cacheable"/></declare-styleable>
+    <declare-styleable name="WheelTextView"><attr name="android:textColor"/><attr name="android:textSize"/><attr format="color|reference" name="wtv_highlightColor"/><attr format="dimension|reference" name="wtv_highlightMarkTextSize"/><attr format="dimension|reference" name="wtv_intervalPadding"/><attr format="dimension|reference" name="wtv_indicatorRadius"/><attr format="dimension|reference" name="wtv_indicatorPadding"/></declare-styleable>
+    <dimen name="dp1">1dp</dimen>
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="dp100">100dp</dimen>
+    <dimen name="dp101">101dp</dimen>
+    <dimen name="dp102">102dp</dimen>
+    <dimen name="dp103">103dp</dimen>
+    <dimen name="dp104">104dp</dimen>
+    <dimen name="dp105">105dp</dimen>
+    <dimen name="dp106">106dp</dimen>
+    <dimen name="dp107">107dp</dimen>
+    <dimen name="dp108">108dp</dimen>
+    <dimen name="dp109">109dp</dimen>
+    <dimen name="dp10_">-10dp</dimen>
+    <dimen name="dp11">11dp</dimen>
+    <dimen name="dp110">110dp</dimen>
+    <dimen name="dp111">111dp</dimen>
+    <dimen name="dp112">112dp</dimen>
+    <dimen name="dp113">113dp</dimen>
+    <dimen name="dp114">114dp</dimen>
+    <dimen name="dp115">115dp</dimen>
+    <dimen name="dp116">116dp</dimen>
+    <dimen name="dp117">117dp</dimen>
+    <dimen name="dp118">118dp</dimen>
+    <dimen name="dp119">119dp</dimen>
+    <dimen name="dp12">12dp</dimen>
+    <dimen name="dp120">120dp</dimen>
+    <dimen name="dp121">121dp</dimen>
+    <dimen name="dp122">122dp</dimen>
+    <dimen name="dp123">123dp</dimen>
+    <dimen name="dp124">124dp</dimen>
+    <dimen name="dp125">125dp</dimen>
+    <dimen name="dp126">126dp</dimen>
+    <dimen name="dp127">127dp</dimen>
+    <dimen name="dp128">128dp</dimen>
+    <dimen name="dp129">129dp</dimen>
+    <dimen name="dp12_">-12dp</dimen>
+    <dimen name="dp13">13dp</dimen>
+    <dimen name="dp130">130dp</dimen>
+    <dimen name="dp131">131dp</dimen>
+    <dimen name="dp132">132dp</dimen>
+    <dimen name="dp133">133dp</dimen>
+    <dimen name="dp134">134dp</dimen>
+    <dimen name="dp135">135dp</dimen>
+    <dimen name="dp136">136dp</dimen>
+    <dimen name="dp137">137dp</dimen>
+    <dimen name="dp138">138dp</dimen>
+    <dimen name="dp139">139dp</dimen>
+    <dimen name="dp14">14dp</dimen>
+    <dimen name="dp140">140dp</dimen>
+    <dimen name="dp141">141dp</dimen>
+    <dimen name="dp142">142dp</dimen>
+    <dimen name="dp143">143dp</dimen>
+    <dimen name="dp144">144dp</dimen>
+    <dimen name="dp145">145dp</dimen>
+    <dimen name="dp146">146dp</dimen>
+    <dimen name="dp147">147dp</dimen>
+    <dimen name="dp148">148dp</dimen>
+    <dimen name="dp149">149dp</dimen>
+    <dimen name="dp14_">-14dp</dimen>
+    <dimen name="dp15">15dp</dimen>
+    <dimen name="dp150">150dp</dimen>
+    <dimen name="dp16">16dp</dimen>
+    <dimen name="dp160">160dp</dimen>
+    <dimen name="dp16_">-16dp</dimen>
+    <dimen name="dp17">17dp</dimen>
+    <dimen name="dp170">170dp</dimen>
+    <dimen name="dp18">18dp</dimen>
+    <dimen name="dp180">180dp</dimen>
+    <dimen name="dp18_">-18dp</dimen>
+    <dimen name="dp19">19dp</dimen>
+    <dimen name="dp190">190dp</dimen>
+    <dimen name="dp2">2dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+    <dimen name="dp200">200dp</dimen>
+    <dimen name="dp20_">-20dp</dimen>
+    <dimen name="dp21">21dp</dimen>
+    <dimen name="dp210">210dp</dimen>
+    <dimen name="dp22">22dp</dimen>
+    <dimen name="dp220">220dp</dimen>
+    <dimen name="dp22_">-22dp</dimen>
+    <dimen name="dp23">23dp</dimen>
+    <dimen name="dp230">230dp</dimen>
+    <dimen name="dp24">24dp</dimen>
+    <dimen name="dp240">240dp</dimen>
+    <dimen name="dp24_">-24dp</dimen>
+    <dimen name="dp25">25dp</dimen>
+    <dimen name="dp250">250dp</dimen>
+    <dimen name="dp26">26dp</dimen>
+    <dimen name="dp260">260dp</dimen>
+    <dimen name="dp26_">-26dp</dimen>
+    <dimen name="dp27">27dp</dimen>
+    <dimen name="dp270">270dp</dimen>
+    <dimen name="dp28">28dp</dimen>
+    <dimen name="dp280">280dp</dimen>
+    <dimen name="dp28_">-28dp</dimen>
+    <dimen name="dp29">29dp</dimen>
+    <dimen name="dp290">290dp</dimen>
+    <dimen name="dp2_">-2dp</dimen>
+    <dimen name="dp3">3dp</dimen>
+    <dimen name="dp30">30dp</dimen>
+    <dimen name="dp300">300dp</dimen>
+    <dimen name="dp30_">-30dp</dimen>
+    <dimen name="dp31">31dp</dimen>
+    <dimen name="dp32">32dp</dimen>
+    <dimen name="dp320">320dp</dimen>
+    <dimen name="dp32_">-32dp</dimen>
+    <dimen name="dp33">33dp</dimen>
+    <dimen name="dp34">34dp</dimen>
+    <dimen name="dp340">340dp</dimen>
+    <dimen name="dp34_">-34dp</dimen>
+    <dimen name="dp35">35dp</dimen>
+    <dimen name="dp36">36dp</dimen>
+    <dimen name="dp360">360dp</dimen>
+    <dimen name="dp36_">-36dp</dimen>
+    <dimen name="dp37">37dp</dimen>
+    <dimen name="dp38">38dp</dimen>
+    <dimen name="dp380">380dp</dimen>
+    <dimen name="dp38_">-38dp</dimen>
+    <dimen name="dp39">39dp</dimen>
+    <dimen name="dp4">4dp</dimen>
+    <dimen name="dp40">40dp</dimen>
+    <dimen name="dp400">400dp</dimen>
+    <dimen name="dp40_">-40dp</dimen>
+    <dimen name="dp41">41dp</dimen>
+    <dimen name="dp42">42dp</dimen>
+    <dimen name="dp420">420dp</dimen>
+    <dimen name="dp42_">-42dp</dimen>
+    <dimen name="dp43">43dp</dimen>
+    <dimen name="dp44">44dp</dimen>
+    <dimen name="dp440">440dp</dimen>
+    <dimen name="dp44_">-44dp</dimen>
+    <dimen name="dp45">45dp</dimen>
+    <dimen name="dp46">46dp</dimen>
+    <dimen name="dp460">460dp</dimen>
+    <dimen name="dp46_">-46dp</dimen>
+    <dimen name="dp47">47dp</dimen>
+    <dimen name="dp48">48dp</dimen>
+    <dimen name="dp480">480dp</dimen>
+    <dimen name="dp48_">-48dp</dimen>
+    <dimen name="dp49">49dp</dimen>
+    <dimen name="dp4_">-4dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="dp50">50dp</dimen>
+    <dimen name="dp500">500dp</dimen>
+    <dimen name="dp50_">-50dp</dimen>
+    <dimen name="dp51">51dp</dimen>
+    <dimen name="dp52">52dp</dimen>
+    <dimen name="dp53">53dp</dimen>
+    <dimen name="dp54">54dp</dimen>
+    <dimen name="dp55">55dp</dimen>
+    <dimen name="dp56">56dp</dimen>
+    <dimen name="dp57">57dp</dimen>
+    <dimen name="dp58">58dp</dimen>
+    <dimen name="dp59">59dp</dimen>
+    <dimen name="dp6">6dp</dimen>
+    <dimen name="dp60">60dp</dimen>
+    <dimen name="dp61">61dp</dimen>
+    <dimen name="dp62">62dp</dimen>
+    <dimen name="dp63">63dp</dimen>
+    <dimen name="dp64">64dp</dimen>
+    <dimen name="dp65">65dp</dimen>
+    <dimen name="dp66">66dp</dimen>
+    <dimen name="dp67">67dp</dimen>
+    <dimen name="dp68">68dp</dimen>
+    <dimen name="dp69">69dp</dimen>
+    <dimen name="dp6_">-6dp</dimen>
+    <dimen name="dp7">7dp</dimen>
+    <dimen name="dp70">70dp</dimen>
+    <dimen name="dp71">71dp</dimen>
+    <dimen name="dp72">72dp</dimen>
+    <dimen name="dp73">73dp</dimen>
+    <dimen name="dp74">74dp</dimen>
+    <dimen name="dp75">75dp</dimen>
+    <dimen name="dp76">76dp</dimen>
+    <dimen name="dp77">77dp</dimen>
+    <dimen name="dp78">78dp</dimen>
+    <dimen name="dp79">79dp</dimen>
+    <dimen name="dp8">8dp</dimen>
+    <dimen name="dp80">80dp</dimen>
+    <dimen name="dp81">81dp</dimen>
+    <dimen name="dp82">82dp</dimen>
+    <dimen name="dp83">83dp</dimen>
+    <dimen name="dp84">84dp</dimen>
+    <dimen name="dp85">85dp</dimen>
+    <dimen name="dp86">86dp</dimen>
+    <dimen name="dp87">87dp</dimen>
+    <dimen name="dp88">88dp</dimen>
+    <dimen name="dp89">89dp</dimen>
+    <dimen name="dp8_">-8dp</dimen>
+    <dimen name="dp9">9dp</dimen>
+    <dimen name="dp90">90dp</dimen>
+    <dimen name="dp91">91dp</dimen>
+    <dimen name="dp92">92dp</dimen>
+    <dimen name="dp93">93dp</dimen>
+    <dimen name="dp94">94dp</dimen>
+    <dimen name="dp95">95dp</dimen>
+    <dimen name="dp96">96dp</dimen>
+    <dimen name="dp97">97dp</dimen>
+    <dimen name="dp98">98dp</dimen>
+    <dimen name="dp99">99dp</dimen>
+    <dimen name="sp10">10sp</dimen>
+    <dimen name="sp11">11sp</dimen>
+    <dimen name="sp12">12sp</dimen>
+    <dimen name="sp13">13sp</dimen>
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp17">17sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp19">19sp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="sp22">22sp</dimen>
+    <dimen name="sp24">24sp</dimen>
+    <dimen name="sp26">26sp</dimen>
+    <dimen name="sp28">28sp</dimen>
+    <dimen name="sp30">30sp</dimen>
+    <item name="fifth" type="id"/>
+    <item name="first" type="id"/>
+    <item name="forth" type="id"/>
+    <item name="second" type="id"/>
+    <item name="third" type="id"/>
+    <string name="cancel">"取消"</string>
+    <string name="confirm">"确定"</string>
+    <string name="file_provider_authority">需根据项目配置，例如影迷卡： com.kokozu.cinephile.fileProvider</string>
+    <string name="msg_loading_default">"加载中…"</string>
+    <string name="msg_loading_wait">"请稍候…"</string>
+    <string name="msg_video_play_no_network">"网络好像有点问题，稍后再试吧"</string>
+    <string name="msg_video_play_no_wifi">"已断开无线网络，使用移动网络将可能产生流量费用"</string>
+    <string name="search_bar_action_cancel">"取消"</string>
+    <string name="search_bar_action_search">"搜索"</string>
+    <string name="search_bar_hint">"搜索"</string>
+    <style name="Animation"/>
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    </style>
+    <style name="BaseTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+    <style name="Dialog.FullScreen" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+    <style name="Dialog.Progress" parent="@style/Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="Widget"/>
+    <style name="Widget.ListView">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:listSelector">@color/transparent</item>
+        <item name="android:cacheColorHint">@color/transparent</item>
+        <item name="android:fadeScrollbars">true</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+    <style name="Widget.ListView.Expandable.NoDivider" parent="@style/Widget.ListView.NoDivider">
+        <item name="android:childDivider">@null</item>
+        <item name="android:divider">@null</item>
+        <item name="android:groupIndicator">@null</item>
+    </style>
+    <style name="Widget.ListView.NoDivider" parent="@style/Widget.ListView">
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:headerDividersEnabled">false</item>
+        <item name="android:footerDividersEnabled">false</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:fadingEdgeLength">0dp</item>
+    </style>
+</resources>

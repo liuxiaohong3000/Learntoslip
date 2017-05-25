@@ -11,7 +11,7 @@ public class WordDtailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_detail);
+        setContentView(R.layout.word_list_item_detail);
 
         // 从Intent获取数据
         int imageId = getIntent().getIntExtra("word_image", 0);

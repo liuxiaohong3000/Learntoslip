@@ -9,9 +9,9 @@ import java.util.List;
  * Created by Administrator on 2017/5/23.
  */
 public class WordService {
-    public static List<Word> listWord(){
+    public static List<Word> listWord(int j){
         List<Word> words = new ArrayList<Word>();
-        for(int i=0;i<10;i++){
+        for(int i=j;i<j+10;i++){
             Word word=new Word();
             word.setImageId(R.drawable.witch);
             word.setName("头像"+i);

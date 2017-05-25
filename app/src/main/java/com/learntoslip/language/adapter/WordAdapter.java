@@ -30,7 +30,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         final Word word = getItem(position);
 
         // 创建布局
-        View oneWordView = LayoutInflater.from(getContext()).inflate(R.layout.word_item, parent, false);
+        View oneWordView = LayoutInflater.from(getContext()).inflate(R.layout.word_list_item, parent, false);
 
         // 获取ImageView和TextView
         ImageView imageView = (ImageView) oneWordView.findViewById(R.id.word_small_imageView);

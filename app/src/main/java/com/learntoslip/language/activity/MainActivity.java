@@ -5,11 +5,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
+import com.igexin.sdk.PushManager;
 import com.learntoslip.language.R;
-import com.learntoslip.language.fragment.*;
+import com.learntoslip.language.fragment.IndexFragment;
+import com.learntoslip.language.fragment.MessageFragment;
+import com.learntoslip.language.fragment.MindFragment;
 
 /**
  *
@@ -32,21 +34,20 @@ public class MainActivity extends FragmentActivity {
      * Fragment数组界面
      *
      */
-    private Class mFragmentArray[] = { Fragment1.class, Fragment2.class,
-            Fragment3.class, Fragment4.class, Fragment5.class };
+    private Class mFragmentArray[] = { IndexFragment.class, MessageFragment.class,
+            MindFragment.class};
     /**
      * 存放图片数组
      *
      */
     private int mImageArray[] = { R.drawable.tab_home_btn,
-            R.drawable.tab_message_btn, R.drawable.tab_selfinfo_btn,
-            R.drawable.tab_square_btn, R.drawable.tab_more_btn };
+            R.drawable.tab_message_btn, R.drawable.tab_selfinfo_btn};
 
     /**
      * 选修卡文字
      *
      */
-    private String mTextArray[] = { "首页", "消息", "好友", "搜索", "更多" };
+    private String mTextArray[] = { "首页", "提醒", "我的" };
     /**
      *
      *
@@ -56,6 +57,11 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         initView();
+
+        //配置个推
+        PushManager.getInstance().initialize(this.getApplicationContext(), com.learntoslip.language.service.webservice.gt.WordPushService.class);
+        //为第三方自定义的推送服务事件接收类
+        PushManager.getInstance().registerPushIntentService(this.getApplicationContext(), com.learntoslip.language.service.webservice.gt.WordIntentService.class);
     }
 
     /**
@@ -87,8 +93,8 @@ public class MainActivity extends FragmentActivity {
      */
     private View getTabItemView(int index) {
         View view = mLayoutInflater.inflate(R.layout.tab_item, null);
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageview);
-        imageView.setImageResource(mImageArray[index]);
+        //ImageView imageView = (ImageView) view.findViewById(R.id.imageview);
+        //imageView.setImageResource(mImageArray[index]);
         TextView textView = (TextView) view.findViewById(R.id.textview);
         textView.setText(mTextArray[index]);
 

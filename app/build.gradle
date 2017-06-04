@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
-
+repositories {
+    jcenter()
+    maven {
+        url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
+    }
+}
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -10,6 +15,14 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+        }
+        manifestPlaceholders = [
+                GETUI_APP_ID : "YV2YjDZ7me8UcddAs4N8v9",
+                GETUI_APP_KEY : "YHfxULdlFw66H8hfRnJSW6",
+                GETUI_APP_SECRET : "79NFx6hckD8cqgpKd6KLk5"
+        ]
     }
     buildTypes {
         release {
@@ -23,4 +36,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.sun.jersey:jersey-client:1.8'
+    compile 'com.alibaba:fastjson:1.2.32'
+    compile 'com.getui:sdk:2.10.2.0'
 }

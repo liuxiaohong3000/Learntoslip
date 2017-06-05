@@ -39,12 +39,14 @@ public class IndexFragment extends Fragment {
             String val = data.getString("value");
             Log.i("mylog", "请求结果为-->" + val);
 
-            // UI界面的更新等相关操作
-            WordAdapter wordAdapter = new WordAdapter(getActivity(), R.layout.word_list_item, WordService.convertWord(val));
+            if(val!=null){
+                // UI界面的更新等相关操作
+                WordAdapter wordAdapter = new WordAdapter(getActivity(), R.layout.word_list_item, WordService.convertWord(val));
 
-            ListView listView = (ListView)view.findViewById(R.id.wordListView);
+                ListView listView = (ListView)view.findViewById(R.id.wordListView);
 
-            listView.setAdapter(wordAdapter);
+                listView.setAdapter(wordAdapter);
+            }
 
         }
     };

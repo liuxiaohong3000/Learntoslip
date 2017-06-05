@@ -13,6 +13,8 @@ public class WordWebService {
         try {
 
             Client client = Client.create();
+            client.setConnectTimeout(2000);
+            client.setReadTimeout(5000);
 
             WebResource webResource = client
                     .resource(WebServiceConfig.getUrl()+"words");

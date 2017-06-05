@@ -29,6 +29,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // 获取老师的数据
         final Word word = getItem(position);
 
+
+
         // 创建布局
         View oneWordView = LayoutInflater.from(getContext()).inflate(R.layout.word_list_item, parent, false);
 

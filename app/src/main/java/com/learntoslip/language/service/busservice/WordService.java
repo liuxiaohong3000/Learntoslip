@@ -29,6 +29,9 @@ public class WordService {
      * @return
      */
     public static List<Word> convertWord(String wordJson){
+        if (wordJson==null)
+            return new ArrayList<Word>();
+
         JSONObject ret = JSON.parseObject(wordJson);
         if (ret.getString("status").equals("0")) {
             if (ret.get("data") == null) {

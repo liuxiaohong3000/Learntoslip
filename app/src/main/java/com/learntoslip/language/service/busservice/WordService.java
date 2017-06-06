@@ -19,8 +19,8 @@ public class WordService {
      * @param j
      * @return
      */
-    public static String listWord(int j){
-        return WordWebService.listWord();
+    public static String listWord(int pageNum){
+        return WordWebService.listWord(pageNum);
     }
 
     /**

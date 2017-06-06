@@ -8,29 +8,126 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.*;
 import com.learntoslip.language.R;
 import com.learntoslip.language.adapter.WordAdapter;
+import com.learntoslip.language.model.Word;
 import com.learntoslip.language.service.busservice.WordService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/5/25.
  */
-public class IndexFragment extends Fragment {
-    private View view;
+public class IndexFragment extends Fragment implements AbsListView.OnScrollListener {
+    private View fragView;
+    private ListView listView;
+    private View moreView;
+    private int pageNum=1;
+    private int pageSize=15;
+    //适配器
+    private WordAdapter wordAdapter;
+
+    // 最后可见条目的索引
+    private int lastVisibleIndex;
+
+    private  Button bt;
+    private ProgressBar pg;
+
+    private List<Word> allword;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        view= inflater.inflate(R.layout.word_list , container, false);
+        //实例化数据list
+        pageNum=1;
+        allword=new ArrayList<Word>();
 
-//        WordAdapter wordAdapter = new WordAdapter(getActivity(), R.layout.word_list_item, WordService.listWord(1));
-//
-//        ListView listView = (ListView)view.findViewById(R.id.wordListView);
-//
-//        listView.setAdapter(wordAdapter);
+        //实例化整个窗口布局
+        fragView= inflater.inflate(R.layout.word_list , container, false);
+
+        //实例化列表布局
+        listView = (ListView)fragView.findViewById(R.id.wordListView);
+
+        // 实例化底部布局
+        moreView = inflater.inflate(R.layout.word_list_more_data, null);
+        bt = (Button) moreView.findViewById(R.id.bt_load);
+        pg = (ProgressBar) moreView.findViewById(R.id.pg);
+
+        //默认隐藏加载按钮
+        bt.setVisibility(View.INVISIBLE);
+
+        // UI界面的更新等相关操作
+        wordAdapter = new WordAdapter(getActivity(), R.layout.word_list_item, allword);
+
+        //设置列表布局的底部和数据处理器
+        listView.addFooterView(moreView);
+        listView.setAdapter(wordAdapter);
+
+        // 绑定滚动监听器
+        listView.setOnScrollListener(this);
+
+        bt.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                pg.setVisibility(View.VISIBLE);// 将进度条可见
+                bt.setVisibility(View.GONE);// 按钮不可见
+
+                handler.postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        new Thread(networkTask).start();// 加载更多数据
+                        bt.setVisibility(View.VISIBLE);
+                        pg.setVisibility(View.GONE);
+                    }
+
+                }, 1000);
+            }
+        });
+
+        //开始加载数据
         new Thread(networkTask).start();
-        return view;
+
+        return fragView;
     }
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem,
+                         int visibleItemCount, int totalItemCount) {
+        // 计算最后可见条目的索引
+        lastVisibleIndex = firstVisibleItem + visibleItemCount - 1;
+
+        // 所有的条目已经和最大条数相等，则移除底部的View
+//        if (totalItemCount == MaxDateNum + 1) {
+//            listView.removeFooterView(moreView);
+//            Toast.makeText(getContext(), "数据全部加载完成，没有更多数据！", Toast.LENGTH_LONG).show();
+//        }
+
+    }
+
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+        // 滑到底部后自动加载，判断listview已经停止滚动并且最后可视的条目等于adapter的条目
+        if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE
+                && lastVisibleIndex == wordAdapter.getCount()) {
+            // 当滑到底部时自动加载
+             pg.setVisibility(View.VISIBLE);
+             bt.setVisibility(View.GONE);
+             handler.postDelayed(new Runnable() {
+
+                 @Override
+                 public void run() {
+                     new Thread(networkTask).start();
+                 }
+
+             }, 2000);
+
+        }
+
+    }
+
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -38,13 +135,30 @@ public class IndexFragment extends Fragment {
             Bundle data = msg.getData();
             String val = data.getString("value");
             Log.i("mylog", "请求结果为-->" + val);
+            if(val==null){
+                //无数据删除底部布局
+                listView.removeFooterView(moreView);
+                Toast.makeText(getContext(), "数据全部加载完成，没有更多数据！", Toast.LENGTH_LONG).show();
+                return;
+            }
+            List<Word> templist=WordService.convertWord(val);
 
-            // UI界面的更新等相关操作
-            WordAdapter wordAdapter = new WordAdapter(getActivity(), R.layout.word_list_item, WordService.convertWord(val));
+            //如果当前页数据小于每页数据，说明已无数据
+            if(templist.size()<pageSize){
+                //无数据删除底部布局
+                listView.removeFooterView(moreView);
+                Toast.makeText(getContext(), "数据全部加载完成，没有更多数据！", Toast.LENGTH_LONG).show();
+            }else{
+                pageNum++;
+            }
 
-            ListView listView = (ListView)view.findViewById(R.id.wordListView);
+            //缓存数据，并通知listView刷新数据
+            allword.addAll(templist);
+            wordAdapter.notifyDataSetChanged();
 
-            listView.setAdapter(wordAdapter);
+            //显示加载按钮
+            bt.setVisibility(View.VISIBLE);
+            pg.setVisibility(View.GONE);
 
         }
     };
@@ -60,7 +174,7 @@ public class IndexFragment extends Fragment {
             // 在这里进行 http request.网络请求相关操作
             Message msg = new Message();
             Bundle data = new Bundle();
-            data.putString("value", WordService.listWord(1));
+            data.putString("value", WordService.listWord(pageNum));
             msg.setData(data);
             handler.sendMessage(msg);
         }

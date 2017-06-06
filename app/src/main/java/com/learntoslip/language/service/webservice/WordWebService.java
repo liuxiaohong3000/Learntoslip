@@ -4,12 +4,13 @@ import com.learntoslip.language.config.WebServiceConfig;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.core.util.MultivaluedMapImpl;
 
 /**
  * Created by Administrator on 2017/6/2.
  */
 public class WordWebService {
-    public static String listWord(){
+    public static String listWord(int pageNum){
         try {
 
             Client client = Client.create();
@@ -18,8 +19,9 @@ public class WordWebService {
 
             WebResource webResource = client
                     .resource(WebServiceConfig.getUrl()+"words");
-
-            ClientResponse response = webResource.accept("application/json")
+            MultivaluedMapImpl params = new MultivaluedMapImpl();
+            params.add("pageNum", pageNum);
+            ClientResponse response = webResource.queryParams(params).accept("application/json")
                     .get(ClientResponse.class);
 
             if (response.getStatus() != 200) {

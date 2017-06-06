@@ -40,7 +40,7 @@ public class MessageFragment extends Fragment {
             Log.i("mylog", "请求结果为-->" + val);
 
             // UI界面的更新等相关操作
-            WordAdapter wordAdapter = new WordAdapter(getActivity(), R.layout.word_list_item, WordService.convertWord(val));
+            WordAdapter wordAdapter = new WordAdapter(getActivity(), R.layout.word_list_item, WordService.convertWords(val));
 
             ListView listView = (ListView)view.findViewById(R.id.wordListView);
 

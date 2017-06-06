@@ -9,7 +9,12 @@ import org.junit.Test;
 public class WordWebServiceTest {
     @Test
     public void getWords() throws Exception {
-        System.out.println(JSON.toJSONString(WordWebService.listWord()));
+        System.out.println(JSON.toJSONString(WordWebService.listWord(1)));
+        //assertEquals(4, 2 + 2);
+    }
+    @Test
+    public void getWord() throws Exception {
+        System.out.println(JSON.toJSONString(WordWebService.getWord(1)));
         //assertEquals(4, 2 + 2);
     }
 }

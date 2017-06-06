@@ -141,7 +141,7 @@ public class IndexFragment extends Fragment implements AbsListView.OnScrollListe
                 Toast.makeText(getContext(), "数据全部加载完成，没有更多数据！", Toast.LENGTH_LONG).show();
                 return;
             }
-            List<Word> templist=WordService.convertWord(val);
+            List<Word> templist=WordService.convertWords(val);
 
             //如果当前页数据小于每页数据，说明已无数据
             if(templist.size()<pageSize){

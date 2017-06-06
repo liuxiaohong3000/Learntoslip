@@ -50,8 +50,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
                 Intent intent = new Intent(getContext(), WordDtailActivity.class);
 
                 // 往Intent中传入Teacher相关的数据，供TeacherDetailActivity使用
-                intent.putExtra("word_image", word.getImageId());
-                intent.putExtra("word_name", word.getName());
+                intent.putExtra("wordId", word.getId());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 //  初始化一个准备跳转到TeacherDetailActivity的Intent
                 getContext().startActivity(intent);

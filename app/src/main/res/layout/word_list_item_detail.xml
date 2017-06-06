@@ -1,26 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/bg">
-
-    <ImageView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:id="@+id/teacher_large_imageView"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/teacher_desc_textView"
-            android:layout_below="@+id/teacher_large_imageView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp" />
-</RelativeLayout>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical" >
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关键词:"
+                android:layout_centerHorizontal="true"
+                android:background="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暂无"
+                android:id="@+id/word_tab_name_textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="翻译:"
+                android:layout_centerHorizontal="true"
+                android:background="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暂无"
+                android:id="@+id/word_tab_transla_textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="词类:"
+                android:layout_centerHorizontal="true"
+                android:background="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暂无"
+                android:id="@+id/word_tab_wordClasses_textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="速记:"
+                android:layout_centerHorizontal="true"
+                android:background="#FF4500"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暂无"
+                android:id="@+id/word_tab_shorthand_textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="同义词:"
+                android:layout_centerHorizontal="true"
+                android:background="#FF69B4"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暂无"
+                android:id="@+id/word_tab_synonym_textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="短语:"
+                android:layout_centerHorizontal="true"
+                android:background="#C0FF3E"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暂无"
+                android:id="@+id/word_tab_phrases_textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="其他:"
+                android:layout_centerHorizontal="true"
+                android:background="#698B22"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暂无"
+                android:id="@+id/word_tab_otherInfo_textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>

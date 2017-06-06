@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.TabHost;
 import android.widget.TextView;
 import com.igexin.sdk.PushManager;
-import com.learntoslip.language.R;
 import com.learntoslip.language.fragment.IndexFragment;
 import com.learntoslip.language.fragment.MessageFragment;
 import com.learntoslip.language.fragment.MindFragment;
+import com.learntoslip.language.R;
 
 /**
  *
@@ -85,6 +85,13 @@ public class MainActivity extends FragmentActivity {
             mTabHost.getTabWidget().getChildAt(i)
                     .setBackgroundResource(R.drawable.selector_tab_background);
         }
+        mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+//                mTabHost.setCurrentTabByTag(tabId);
+                upDateTab(mTabHost);
+            }
+        });
     }
 
     /**
@@ -97,8 +104,22 @@ public class MainActivity extends FragmentActivity {
         //imageView.setImageResource(mImageArray[index]);
         TextView textView = (TextView) view.findViewById(R.id.textview);
         textView.setText(mTextArray[index]);
+        if(index==0){
+            textView.setTextColor(this.getResources().getColor(R.color.app_blue));
+        }
 
         return view;
     }
+    private void upDateTab(FragmentTabHost mTabHost) {
+        for (int i = 0; i < mTabHost.getTabWidget().getChildCount(); i++) {
+            TextView tv = (TextView) mTabHost.getTabWidget().getChildAt(i).findViewById(R.id.textview);
+            if (mTabHost.getCurrentTab() == i) {//选中
+                tv.setTextColor(this.getResources().getColor(R.color.app_blue));
+            } else {//不选中
+                tv.setTextColor(this.getResources().getColor(R.color.app_orange));
+            }
+        }
 
+
+    }
 }

@@ -119,6 +119,34 @@ public class WordWebService {
         }
         return null;
     }
+    public static String getUserWord(Long userId, Long wordId){
+        try {
+
+            Client client = Client.create();
+            client.setConnectTimeout(2000);
+            client.setReadTimeout(5000);
+
+            WebResource webResource = client
+                    .resource(WebServiceConfig.getUrl()+"userapi/word");
+            MultivaluedMapImpl params = new MultivaluedMapImpl();
+            params.add("userId", userId);
+            params.add("wordId", wordId);
+            ClientResponse response = webResource.queryParams(params).accept("application/json")
+                    .get(ClientResponse.class);
+
+            if (response.getStatus() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : "
+                        + response.getStatus());
+            }
+
+            String output = response.getEntity(String.class);
+            System.out.println("Output from Server .... \n" + output);
+            return output;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public static String addUserWord(Long userId, Long forgetId, Long wordId){
         try {
 
@@ -147,7 +175,7 @@ public class WordWebService {
         }
         return null;
     }
-    public static String modifyWord(Long userWordId){
+    public static String modifyUserWord(Long userWordId,Long forgetId){
         try {
 
             Client client = Client.create();
@@ -157,6 +185,7 @@ public class WordWebService {
             WebResource webResource = client.resource(WebServiceConfig.getUrl()+"userapi/modifyWord");
             MultivaluedMapImpl params = new MultivaluedMapImpl();
             params.add("userWordId", userWordId);
+            params.add("forgetId", forgetId);
             ClientResponse response = webResource.queryParams(params).type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class);
 
             if (response.getStatus() != 200) {

@@ -34,8 +34,8 @@ public class WordWebServiceTest {
     }
 
     @Test
-    public void modifyWord() throws Exception {
-        System.out.println(JSON.toJSONString(WordWebService.modifyWord(2L)));
+    public void modifyUserWord() throws Exception {
+        System.out.println(JSON.toJSONString(WordWebService.modifyUserWord(2L)));
         //assertEquals(4, 2 + 2);
     }
 }

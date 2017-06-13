@@ -9,6 +9,7 @@ import java.util.List;
  * Created by Administrator on 2017/6/4.
  */
 public class MindConfig {
+    public static final Long userId=1L;
     public static List<Mind> listMind(){
         List<Mind> minds= new ArrayList<Mind>();
         Mind mind1=new Mind();

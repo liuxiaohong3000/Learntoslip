@@ -102,7 +102,7 @@ public class MessageFragment extends Fragment implements AbsListView.OnScrollLis
     public void onScroll(AbsListView view, int firstVisibleItem,
                          int visibleItemCount, int totalItemCount) {
         // 计算最后可见条目的索引
-        lastVisibleIndex = firstVisibleItem + visibleItemCount - 1;
+        lastVisibleIndex = firstVisibleItem + visibleItemCount - 2;
 
         // 所有的条目已经和最大条数相等，则移除底部的View
 //        if (totalItemCount == MaxDateNum + 1) {

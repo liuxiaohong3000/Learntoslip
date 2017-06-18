@@ -47,8 +47,8 @@ public class WordWebService {
             WebResource webResource = client
                     .resource(WebServiceConfig.getUrl()+"wordapi/words");
             MultivaluedMapImpl params = new MultivaluedMapImpl();
-            params.add("pageNum", pageNum);
             params.add("typeId", typeId);
+            params.add("pageNum", pageNum);
             ClientResponse response = webResource.queryParams(params).accept("application/json")
                     .get(ClientResponse.class);
 

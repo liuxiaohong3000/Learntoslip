@@ -12,7 +12,32 @@ import javax.ws.rs.core.MediaType;
  * Created by Administrator on 2017/6/2.
  */
 public class WordWebService {
-    public static String listWord(int pageNum){
+    public static String getTypes(){
+        try {
+
+            Client client = Client.create();
+            client.setConnectTimeout(2000);
+            client.setReadTimeout(5000);
+
+            WebResource webResource = client
+                    .resource(WebServiceConfig.getUrl()+"wordapi/types");
+            ClientResponse response = webResource.accept("application/json")
+                    .get(ClientResponse.class);
+
+            if (response.getStatus() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : "
+                        + response.getStatus());
+            }
+
+            String output = response.getEntity(String.class);
+            System.out.println("Output from Server .... \n" + output);
+            return output;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static String listWord(long typeId,int pageNum){
         try {
 
             Client client = Client.create();
@@ -23,6 +48,7 @@ public class WordWebService {
                     .resource(WebServiceConfig.getUrl()+"wordapi/words");
             MultivaluedMapImpl params = new MultivaluedMapImpl();
             params.add("pageNum", pageNum);
+            params.add("typeId", typeId);
             ClientResponse response = webResource.queryParams(params).accept("application/json")
                     .get(ClientResponse.class);
 

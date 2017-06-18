@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.learntoslip.language.R;
+import com.learntoslip.language.model.Type;
 import com.learntoslip.language.model.Word;
 import com.learntoslip.language.model.dto.WordDTO;
 import com.learntoslip.language.service.webservice.WordWebService;
@@ -18,16 +19,16 @@ import static com.alibaba.fastjson.JSON.parseArray;
  */
 public class WordService {
     /**
-     * 获取字符串
+     * 获取关键词里诶啊哦
      * @param pageNum
      * @return
      */
-    public static String listWord(int pageNum){
-        return WordWebService.listWord(pageNum);
+    public static String listWord(long typeId,int pageNum){
+        return WordWebService.listWord(typeId,pageNum);
     }
 
     /**
-     * json数据转换
+     * 关键词数据转换
      * @param wordJson
      * @return
      */
@@ -51,7 +52,7 @@ public class WordService {
     }
 
     /**
-     * 获取字符串
+     * 获取关键词
      * @param id
      * @return
      */
@@ -60,7 +61,7 @@ public class WordService {
         return WordWebService.getWord(id);
     }
     /**
-     * json数据转换
+     * 关键词数据转换
      * @param wordJson
      * @return
      */
@@ -78,5 +79,33 @@ public class WordService {
             return dto;
         }
         return new WordDTO();
+    }
+
+    /**
+     * 获取类型列表
+     * @return
+     */
+    public static String getTypes(){
+        return WordWebService.getTypes();
+    }
+
+    /**
+     * 类型数据转换
+     * @return
+     */
+    public static List<Type> convertTypes(String typeJson){
+        if (typeJson==null)
+            return new ArrayList<Type>();
+
+        JSONObject ret = JSON.parseObject(typeJson);
+        if (ret.getString("status").equals("0")) {
+            if (ret.get("data") == null) {
+                return new ArrayList<Type>();
+            }
+            JSONArray array = ret.getJSONArray("data");
+            List<Type> types = parseArray(array.toJSONString(), Type.class);
+            return types;
+        }
+        return new ArrayList<Type>();
     }
 }

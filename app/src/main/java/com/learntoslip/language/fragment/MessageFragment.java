@@ -34,7 +34,7 @@ public class MessageFragment extends Fragment implements AbsListView.OnScrollLis
     // 最后可见条目的索引
     private int lastVisibleIndex;
 
-    private Button bt;
+    //private Button bt;
     private ProgressBar pg;
 
     private List<UserWord> allword;
@@ -53,13 +53,13 @@ public class MessageFragment extends Fragment implements AbsListView.OnScrollLis
 
         // 实例化底部布局
         moreView = inflater.inflate(R.layout.word_list_more_data, null);
-        bt = (Button) moreView.findViewById(R.id.bt_load);
+        //bt = (Button) moreView.findViewById(R.id.bt_load);
         pg = (ProgressBar) moreView.findViewById(R.id.pg);
 
         // 实例化header布局
         headerView = inflater.inflate(R.layout.user_word_list_header, null);
         //默认隐藏加载按钮
-        bt.setVisibility(View.INVISIBLE);
+        //bt.setVisibility(View.INVISIBLE);
 
         // UI界面的更新等相关操作
         userWordAdapter = new UserWordAdapter(getActivity(), R.layout.user_word_list_item, allword);
@@ -72,25 +72,25 @@ public class MessageFragment extends Fragment implements AbsListView.OnScrollLis
         // 绑定滚动监听器
         listView.setOnScrollListener(this);
 
-        bt.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                pg.setVisibility(View.VISIBLE);// 将进度条可见
-                bt.setVisibility(View.GONE);// 按钮不可见
-
-                handler.postDelayed(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        new Thread(networkTask).start();// 加载更多数据
-                        bt.setVisibility(View.VISIBLE);
-                        pg.setVisibility(View.GONE);
-                    }
-
-                }, 1000);
-            }
-        });
+//        bt.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                pg.setVisibility(View.VISIBLE);// 将进度条可见
+//                bt.setVisibility(View.GONE);// 按钮不可见
+//
+//                handler.postDelayed(new Runnable() {
+//
+//                    @Override
+//                    public void run() {
+//                        new Thread(networkTask).start();// 加载更多数据
+//                        bt.setVisibility(View.VISIBLE);
+//                        pg.setVisibility(View.GONE);
+//                    }
+//
+//                }, 1000);
+//            }
+//        });
 
         //开始加载数据
         new Thread(networkTask).start();
@@ -119,7 +119,7 @@ public class MessageFragment extends Fragment implements AbsListView.OnScrollLis
                 && lastVisibleIndex == userWordAdapter.getCount()) {
             // 当滑到底部时自动加载
             pg.setVisibility(View.VISIBLE);
-            bt.setVisibility(View.GONE);
+            //bt.setVisibility(View.GONE);
             handler.postDelayed(new Runnable() {
 
                 @Override
@@ -162,7 +162,7 @@ public class MessageFragment extends Fragment implements AbsListView.OnScrollLis
             userWordAdapter.notifyDataSetChanged();
 
             //显示加载按钮
-            bt.setVisibility(View.VISIBLE);
+            //bt.setVisibility(View.VISIBLE);
             pg.setVisibility(View.GONE);
 
         }

@@ -30,7 +30,10 @@ public class IndexFragment extends Fragment implements AbsListView.OnScrollListe
             {
                 case REFRESH_COMPLETE:
                     listOpera.setPageNum(1);
-                    listOpera.getAllword().clear();
+                    if(listOpera.getAllword()!=null){
+                        listOpera.getAllword().clear();
+                    }
+
                     setList();
                     mSwipeLayout.setRefreshing(false);
                     break;

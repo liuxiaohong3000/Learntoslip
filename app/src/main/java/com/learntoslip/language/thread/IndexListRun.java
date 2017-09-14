@@ -37,6 +37,7 @@ public class IndexListRun implements  Runnable{
             List<Word> templist=WordService.convertWords(val);
             if(templist==null || templist.size()==0){
                 listOpera.getPg().setVisibility(View.GONE);
+                listOpera.getWordAdapter().notifyDataSetChanged();
                 return;
             }
             //如果当前页数据小于每页数据，说明已无数据

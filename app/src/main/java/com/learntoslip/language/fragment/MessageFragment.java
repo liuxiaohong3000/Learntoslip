@@ -163,6 +163,7 @@ public class MessageFragment extends Fragment{
             List<UserWord> templist=UserWordService.convertUserWords(val);
             if(templist==null || templist.size()==0){
                 pg.setVisibility(View.GONE);
+                userWordAdapter.notifyDataSetChanged();
                 return;
             }
             //如果当前页数据小于每页数据，说明已无数据

@@ -37,11 +37,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // 获取ImageView和TextView
         ImageView imageView = (ImageView) oneWordView.findViewById(R.id.word_small_imageView);
         TextView textView = (TextView) oneWordView.findViewById(R.id.word_name_textView);
-
+        TextView translateView = (TextView) oneWordView.findViewById(R.id.word_translate_textView);
         // 根据老师数据设置ImageView和TextView的展现
         imageView.setImageResource(word.getImageId());
         textView.setText(word.getName());
-
+        //textView.setTextColor();
+        translateView.setText(word.getTranslate());
         oneWordView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

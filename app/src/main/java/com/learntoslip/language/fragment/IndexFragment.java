@@ -1,7 +1,9 @@
 package com.learntoslip.language.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +20,40 @@ public class IndexFragment extends Fragment implements AbsListView.OnScrollListe
     private  IndexListOpera listOpera;
     // 最后可见条目的索引
     private int lastVisibleIndex;
+    private SwipeRefreshLayout mSwipeLayout;
+    private static final int REFRESH_COMPLETE = 0X110;
+    private Handler mHandler = new Handler()
+    {
+        public void handleMessage(android.os.Message msg)
+        {
+            switch (msg.what)
+            {
+                case REFRESH_COMPLETE:
+                    listOpera.setPageNum(1);
+                    listOpera.getAllword().clear();
+                    setList();
+                    mSwipeLayout.setRefreshing(false);
+                    break;
 
+            }
+        };
+    };
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         //实例化整个窗口布局
         View fragView= inflater.inflate(R.layout.word_list , container, false);
+        mSwipeLayout = (SwipeRefreshLayout) fragView.findViewById(R.id.word_list_swipe_ly);
+        mSwipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
+            public void onRefresh()
+            {
+                // Log.e("xxx", Thread.currentThread().getName());
+                // UI Thread
 
+                mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE, 2000);
+
+            }
+        });
         listOpera=new IndexListOpera();
         listOpera.setContext(getContext());
         listOpera.setActivity(getActivity());

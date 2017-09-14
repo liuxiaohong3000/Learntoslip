@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 import com.learntoslip.language.R;
 import com.learntoslip.language.adapter.UserWordAdapter;
 import com.learntoslip.language.config.MindConfig;
@@ -72,7 +71,7 @@ public class MessageFragment extends Fragment{
         //实例化整个窗口布局
         fragView= inflater.inflate(R.layout.user_word_list , container, false);
 
-        mSwipeLayout = (SwipeRefreshLayout) fragView.findViewById(R.id.id_swipe_ly);
+        mSwipeLayout = (SwipeRefreshLayout) fragView.findViewById(R.id.user_word_list_swipe_ly);
         mSwipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
             public void onRefresh()
             {
@@ -158,16 +157,19 @@ public class MessageFragment extends Fragment{
             if(val==null){
                 //无数据删除底部布局
                 //listView.removeFooterView(moreView);
-                Toast.makeText(getContext(), "数据全部加载完成，没有更多数据！", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "数据全部加载完成，没有更多数据！", Toast.LENGTH_LONG).show();
                 return;
             }
             List<UserWord> templist=UserWordService.convertUserWords(val);
-
+            if(templist==null || templist.size()==0){
+                pg.setVisibility(View.GONE);
+                return;
+            }
             //如果当前页数据小于每页数据，说明已无数据
             if(templist.size()<pageSize){
                 //无数据删除底部布局
                 //listView.removeFooterView(moreView);
-                Toast.makeText(getContext(), "数据全部加载完成，没有更多数据！", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "数据全部加载完成，没有更多数据！", Toast.LENGTH_LONG).show();
             }
             pageNum++;
             //缓存数据，并通知listView刷新数据

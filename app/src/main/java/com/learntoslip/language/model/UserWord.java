@@ -36,7 +36,15 @@ public class UserWord implements Serializable{
 	*  记忆时间
 	*/
 	private Date memoryTime;
+	/**
+	 *  翻译
+	 */
+	private String translate;
 
+	/**
+	 * 音标
+	 */
+	private String pronunciation;
 	/**
 	*  回忆时间
 	*/
@@ -150,15 +158,33 @@ public class UserWord implements Serializable{
 		this.wordName = wordName;
 	}
 
+	public String getTranslate() {
+		return translate;
+	}
+
+	public void setTranslate(String translate) {
+		this.translate = translate;
+	}
+
+	public String getPronunciation() {
+		return pronunciation;
+	}
+
+	public void setPronunciation(String pronunciation) {
+		this.pronunciation = pronunciation;
+	}
+
 	@Override
 	public String toString() {
-		return "DUserWord{" +
+		return "UserWord{" +
 				"id=" + id +
 				", userId=" + userId +
 				", wordId=" + wordId +
 				", wordType=" + wordType +
 				", wordName='" + wordName + '\'' +
 				", memoryTime=" + memoryTime +
+				", translate='" + translate + '\'' +
+				", pronunciation='" + pronunciation + '\'' +
 				", recallTime=" + recallTime +
 				", userForgettingCurveId=" + userForgettingCurveId +
 				", note='" + note + '\'' +

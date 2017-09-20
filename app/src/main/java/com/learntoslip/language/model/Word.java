@@ -23,7 +23,10 @@ public class Word implements Serializable{
 	*  翻译
 	*/
 	private String translate;
-
+	/**
+	 * 音标
+	 */
+	private String pronunciation;
 	/**
 	*  类型ID
 	*/
@@ -94,12 +97,22 @@ public class Word implements Serializable{
 		this.imageId = imageId;
 	}
 
+	public String getPronunciation() {
+		return pronunciation;
+	}
+
+	public void setPronunciation(String pronunciation) {
+		this.pronunciation = pronunciation;
+	}
+
 	@Override
 	public String toString() {
-		return "BWord{" +
+		return "Word{" +
 				"id=" + id +
+				", imageId=" + imageId +
 				", name='" + name + '\'' +
 				", translate='" + translate + '\'' +
+				", pronunciation='" + pronunciation + '\'' +
 				", typeId=" + typeId +
 				", note='" + note + '\'' +
 				", createTime=" + createTime +

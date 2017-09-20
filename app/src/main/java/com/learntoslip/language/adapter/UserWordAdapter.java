@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.learntoslip.language.R;
 import com.learntoslip.language.activity.WordDtailActivity;
 import com.learntoslip.language.model.UserWord;
-import com.learntoslip.language.util.DateUtil;
 
 import java.util.List;
 
@@ -35,11 +34,24 @@ public class UserWordAdapter extends ArrayAdapter<UserWord> {
         View oneWordView = LayoutInflater.from(getContext()).inflate(R.layout.user_word_list_item, parent, false);
 
         // 获取ImageView和TextView
-        TextView nameView = (TextView) oneWordView.findViewById(R.id.user_word_name_nameView);
-        TextView textView = (TextView) oneWordView.findViewById(R.id.user_word_name_textView);
+        TextView nameView = (TextView) oneWordView.findViewById(R.id.user_word_name_textView);
+        final TextView contentView = (TextView) oneWordView.findViewById(R.id.user_word_content_textView);
 
         nameView.setText(userWord.getWordName());
-        textView.setText(DateUtil.Date2StringHMS(userWord.getRecallTime()));
+        String pnuc=userWord.getPronunciation()==null ? "" :userWord.getPronunciation();
+        String trans=userWord.getTranslate()==null ? "":userWord.getTranslate();
+        final String content=pnuc+trans;
+        if(content.length()>0){
+            contentView.setText("显示内容");
+            contentView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    contentView.setText(content);
+                }
+            });
+        }
+
+
 
         oneWordView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 import com.learntoslip.language.R;
 import com.learntoslip.language.adapter.UserWordAdapter;
 import com.learntoslip.language.config.MindConfig;
+import com.learntoslip.language.listener.DelExpireUserWordListener;
 import com.learntoslip.language.model.UserWord;
 import com.learntoslip.language.service.busservice.UserWordService;
 
@@ -92,6 +93,7 @@ public class MessageFragment extends Fragment{
 
         // 实例化header布局
         headerView = inflater.inflate(R.layout.user_word_list_header, null);
+        headerView.findViewById(R.id.del_expire_word_btn).setOnClickListener(new DelExpireUserWordListener(getContext()));
         //默认隐藏加载按钮
         //bt.setVisibility(View.INVISIBLE);
 

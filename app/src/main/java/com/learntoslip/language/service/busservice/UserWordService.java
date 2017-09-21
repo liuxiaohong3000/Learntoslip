@@ -70,6 +70,14 @@ public class UserWordService {
         return wordJson;
     }
     /**
+     * 删除过期的关键词
+     * @return
+     */
+    public static String delExpireUserWord(Long userId){
+        String wordJson=WordWebService.delExpireUserWord(userId);
+        return wordJson;
+    }
+    /**
      * 获取字符串
      * @return
      */

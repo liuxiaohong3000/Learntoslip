@@ -1,21 +1,17 @@
 package com.learntoslip.language.service.webservice;
 
 import com.learntoslip.language.config.WebServiceConfig;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.core.util.MultivaluedMapImpl;
-
-import javax.ws.rs.core.MediaType;
+import com.learntoslip.language.util.http.HttpRequest;
 
 /**
  * Created by Administrator on 2017/6/2.
  */
 public class WordWebService {
+    private static int readTimeOut=20000;
     public static String getTypes(){
         try {
 
-            Client client = Client.create();
+            /*Client client = Client.create();
             client.setConnectTimeout(2000);
             client.setReadTimeout(5000);
 
@@ -29,9 +25,9 @@ public class WordWebService {
                         + response.getStatus());
             }
 
-            String output = response.getEntity(String.class);
-            System.out.println("Output from Server .... \n" + output);
-            return output;
+            String output = response.getEntity(String.class);*/
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"wordapi/types");
+            return hr.get(1000, readTimeOut, "utf-8", "utf-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -40,7 +36,7 @@ public class WordWebService {
     public static String listWord(long typeId,int pageNum){
         try {
 
-            Client client = Client.create();
+            /*Client client = Client.create();
             client.setConnectTimeout(2000);
             client.setReadTimeout(5000);
 
@@ -57,9 +53,12 @@ public class WordWebService {
                         + response.getStatus());
             }
 
-            String output = response.getEntity(String.class);
-            System.out.println("Output from Server .... \n" + output);
-            return output;
+            String output = response.getEntity(String.class);*/
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"wordapi/words");
+            hr.addParam("typeId", typeId);
+            hr.addParam("pageNum", pageNum);
+            return hr.get(1000, readTimeOut, "utf-8", "utf-8");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,7 +68,7 @@ public class WordWebService {
     public static String getWord(long id){
         try {
 
-            Client client = Client.create();
+            /*Client client = Client.create();
             client.setConnectTimeout(2000);
             client.setReadTimeout(5000);
 
@@ -85,7 +84,10 @@ public class WordWebService {
 
             String output = response.getEntity(String.class);
             System.out.println("Output from Server .... \n" + output);
-            return output;
+            return output;*/
+
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"wordapi/words/"+id);
+            return hr.get(1000, readTimeOut, "utf-8", "utf-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -94,7 +96,7 @@ public class WordWebService {
     public static String getForgets(){
         try {
 
-            Client client = Client.create();
+            /*Client client = Client.create();
             client.setConnectTimeout(2000);
             client.setReadTimeout(5000);
 
@@ -110,7 +112,9 @@ public class WordWebService {
 
             String output = response.getEntity(String.class);
             System.out.println("Output from Server .... \n" + output);
-            return output;
+            return output;*/
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"forgetapi/forgets");
+            return hr.get(1000, readTimeOut, "utf-8", "utf-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -119,7 +123,7 @@ public class WordWebService {
     public static String getUserWords(Long userId, Long wordType, Integer pageNum){
         try {
 
-            Client client = Client.create();
+            /*Client client = Client.create();
             client.setConnectTimeout(2000);
             client.setReadTimeout(5000);
 
@@ -139,7 +143,12 @@ public class WordWebService {
 
             String output = response.getEntity(String.class);
             System.out.println("Output from Server .... \n" + output);
-            return output;
+            return output;*/
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"userapi/words");
+            hr.addParam("userId", userId);
+            hr.addParam("wordType", wordType);
+            hr.addParam("pageNum", pageNum);
+            return hr.get(1000, readTimeOut, "utf-8", "utf-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -148,7 +157,7 @@ public class WordWebService {
     public static String getUserWord(Long userId, Long wordId){
         try {
 
-            Client client = Client.create();
+            /*Client client = Client.create();
             client.setConnectTimeout(2000);
             client.setReadTimeout(5000);
 
@@ -167,7 +176,11 @@ public class WordWebService {
 
             String output = response.getEntity(String.class);
             System.out.println("Output from Server .... \n" + output);
-            return output;
+            return output;*/
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"userapi/word");
+            hr.addParam("userId", userId);
+            hr.addParam("wordId", wordId);
+            return hr.get(1000, readTimeOut, "utf-8", "utf-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -176,7 +189,7 @@ public class WordWebService {
     public static String addUserWord(Long userId, Long forgetId, Long wordId){
         try {
 
-            Client client = Client.create();
+            /*Client client = Client.create();
             client.setConnectTimeout(2000);
             client.setReadTimeout(5000);
 
@@ -195,7 +208,12 @@ public class WordWebService {
 
             String output = response.getEntity(String.class);
             System.out.println("Output from Server .... \n" + output);
-            return output;
+            return output;*/
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"userapi/addWord");
+            hr.addParam("userId", userId);
+            hr.addParam("wordId", wordId);
+            hr.addParam("forgetId", forgetId);
+            return hr.post(1000, readTimeOut, "utf-8", "utf-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -204,7 +222,7 @@ public class WordWebService {
     public static String modifyUserWord(Long userWordId,Long forgetId){
         try {
 
-            Client client = Client.create();
+            /*Client client = Client.create();
             client.setConnectTimeout(2000);
             client.setReadTimeout(5000);
 
@@ -221,7 +239,11 @@ public class WordWebService {
 
             String output = response.getEntity(String.class);
             System.out.println("Output from Server .... \n" + output);
-            return output;
+            return output;*/
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"userapi/modifyWord");
+            hr.addParam("userWordId", userWordId);
+            hr.addParam("forgetId", forgetId);
+            return hr.post(1000, readTimeOut, "utf-8", "utf-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -230,7 +252,7 @@ public class WordWebService {
     public static String delExpireUserWord(Long userId){
         try {
 
-            Client client = Client.create();
+            /*Client client = Client.create();
             client.setConnectTimeout(2000);
             client.setReadTimeout(5000);
 
@@ -246,7 +268,10 @@ public class WordWebService {
 
             String output = response.getEntity(String.class);
             System.out.println("Output from Server .... \n" + output);
-            return output;
+            return output;*/
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"userapi/deleteExpireWord");
+            hr.addParam("userId", userId);
+            return hr.post(1000, readTimeOut, "utf-8", "utf-8");
         } catch (Exception e) {
             e.printStackTrace();
         }

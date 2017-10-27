@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.learntoslip.language.R;
 import com.learntoslip.language.activity.WordDtailActivity;
@@ -35,18 +34,24 @@ public class WordAdapter extends ArrayAdapter<Word> {
         View oneWordView = LayoutInflater.from(getContext()).inflate(R.layout.word_list_item, parent, false);
 
         // 获取ImageView和TextView
-        ImageView imageView = (ImageView) oneWordView.findViewById(R.id.word_small_imageView);
-        TextView textView = (TextView) oneWordView.findViewById(R.id.word_name_textView);
-        TextView translateView = (TextView) oneWordView.findViewById(R.id.word_translate_textView);
-        TextView pronunciationView = (TextView) oneWordView.findViewById(R.id.word_pronunciation_textView);
+        TextView textNameView = (TextView) oneWordView.findViewById(R.id.word_name_textView);
+        final TextView textContentView = (TextView) oneWordView.findViewById(R.id.word_content_textView);
 
 
-        // 根据老师数据设置ImageView和TextView的展现
-        imageView.setImageResource(word.getImageId());
-        textView.setText(word.getName());
-        pronunciationView.setText(word.getPronunciation());
-        //textView.setTextColor();
-        translateView.setText(word.getTranslate());
+        // 根据数据设置ImageView和TextView的展现
+        textNameView.setText(word.getName());
+        String pnuc=word.getPronunciation()==null ? "" :word.getPronunciation();
+        String trans=word.getTranslate()==null ? "":word.getTranslate();
+        final String content=pnuc+trans;
+        if(content.length()>0){
+            textContentView.setText("显示内容");
+            textContentView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    textContentView.setText(content);
+                }
+            });
+        }
         oneWordView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

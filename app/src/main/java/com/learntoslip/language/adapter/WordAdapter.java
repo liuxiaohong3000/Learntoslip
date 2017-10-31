@@ -34,7 +34,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         View oneWordView = LayoutInflater.from(getContext()).inflate(R.layout.word_list_item, parent, false);
 
         // 获取ImageView和TextView
-        TextView textNameView = (TextView) oneWordView.findViewById(R.id.word_name_textView);
+        final TextView textNameView = (TextView) oneWordView.findViewById(R.id.word_name_textView);
         final TextView textContentView = (TextView) oneWordView.findViewById(R.id.word_content_textView);
 
 
@@ -42,13 +42,14 @@ public class WordAdapter extends ArrayAdapter<Word> {
         textNameView.setText(word.getName());
         String pnuc=word.getPronunciation()==null ? "" :word.getPronunciation();
         String trans=word.getTranslate()==null ? "":word.getTranslate();
-        final String content=pnuc+trans;
+        final String content="\n"+pnuc+"\n"+trans;
         if(content.length()>0){
             textContentView.setText("显示内容");
             textContentView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    textContentView.setText(content);
+                    textContentView.setText("");
+                    textNameView.setText(word.getName()+content);
                 }
             });
         }

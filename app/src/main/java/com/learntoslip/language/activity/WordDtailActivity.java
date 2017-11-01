@@ -6,11 +6,14 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.learntoslip.language.R;
 import com.learntoslip.language.config.MindConfig;
+import com.learntoslip.language.listener.SaveWordDetailListener;
 import com.learntoslip.language.model.ForgettingCurve;
 import com.learntoslip.language.model.UserWord;
 import com.learntoslip.language.model.dto.WordDTO;
@@ -74,6 +77,7 @@ public class WordDtailActivity extends AppCompatActivity {
 //         根据数据设置视图展现
 //        imageView.setImageResource(imageId);
         if(dto.getWord()!=null){
+
             TextView tabnameview = (TextView) findViewById(R.id.word_tab_name_textView);
             tabnameview.setText(dto.getWord().getName());
 
@@ -81,20 +85,86 @@ public class WordDtailActivity extends AppCompatActivity {
             tabtranslaview.setText(dto.getWord().getTranslate());
         }
         if(dto.getTab()!=null){
-            TextView tabclassview = (TextView) findViewById(R.id.word_tab_wordClasses_textView);
-            tabclassview.setText(dto.getTab().getWordClasses());
+            final EditText tabclassview = (EditText) findViewById(R.id.word_tab_wordClasses_textView);
+            if(dto.getTab().getWordClasses()!= null && dto.getTab().getWordClasses().length()>0){
+                tabclassview.setText(dto.getTab().getWordClasses());
+            }
 
-            TextView tabshorthandview = (TextView) findViewById(R.id.word_tab_shorthand_textView);
-            tabshorthandview.setText(dto.getTab().getShorthand());
 
-            TextView tabsynonymview = (TextView) findViewById(R.id.word_tab_synonym_textView);
-            tabsynonymview.setText(dto.getTab().getSynonym());
+            final EditText tabshorthandview = (EditText)findViewById(R.id.word_tab_shorthand_editText);
+            if(dto.getTab().getShorthand()!=null  && dto.getTab().getShorthand().length()>0){
+                tabshorthandview.setText(dto.getTab().getShorthand());
+            }
 
-            TextView tabphrasesview = (TextView) findViewById(R.id.word_tab_phrases_textView);
-            tabphrasesview.setText(dto.getTab().getPhrases());
 
-            TextView tabotherInfoview = (TextView) findViewById(R.id.word_tab_otherInfo_textView);
-            tabotherInfoview.setText(dto.getTab().getOtherInfo());
+            final EditText tabsynonymview = (EditText) findViewById(R.id.word_tab_synonym_textView);
+            if(dto.getTab().getSynonym()!= null && dto.getTab().getSynonym().length()>0){
+                tabsynonymview.setText(dto.getTab().getSynonym());
+            }
+
+
+            final EditText  tabphrasesview = (EditText) findViewById(R.id.word_tab_phrases_textView);
+            if(dto.getTab().getPhrases()!= null && dto.getTab().getPhrases().length()>0){
+                tabphrasesview.setText(dto.getTab().getPhrases());
+            }
+
+            final EditText tabotherInfoview = (EditText) findViewById(R.id.word_tab_otherInfo_textView);
+            if(dto.getTab().getOtherInfo()!= null && dto.getTab().getOtherInfo().length()>0){
+                tabotherInfoview.setText(dto.getTab().getOtherInfo());
+            }
+
+            if(MindConfig.userId==1L){
+                tabclassview.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        tabclassview.setFocusable(true);
+                        tabclassview.setFocusableInTouchMode(true);
+                        tabclassview.requestFocus();
+                        WordDtailActivity.super.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                    }
+                });
+                tabshorthandview.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        tabshorthandview.setFocusable(true);
+                        tabshorthandview.setFocusableInTouchMode(true);
+                        tabshorthandview.requestFocus();
+                        WordDtailActivity.super.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                    }
+                });
+                tabsynonymview.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        tabsynonymview.setFocusable(true);
+                        tabsynonymview.setFocusableInTouchMode(true);
+                        tabsynonymview.requestFocus();
+                        WordDtailActivity.super.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                    }
+                });
+                tabphrasesview.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        tabphrasesview.setFocusable(true);
+                        tabphrasesview.setFocusableInTouchMode(true);
+                        tabphrasesview.requestFocus();
+                        WordDtailActivity.super.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                    }
+                });
+                tabotherInfoview.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        tabotherInfoview.setFocusable(true);
+                        tabotherInfoview.setFocusableInTouchMode(true);
+                        tabotherInfoview.requestFocus();
+                        WordDtailActivity.super.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                    }
+                });
+                final View saveButton=findViewById(R.id.save_word_detail_btn);
+                saveButton.setVisibility((View.VISIBLE));
+                saveButton.setOnClickListener(new SaveWordDetailListener(this.getApplicationContext(),dto.getTab().getId(),tabclassview,tabshorthandview,tabsynonymview,tabphrasesview,tabotherInfoview));
+            }
+
+
         }
 
     }

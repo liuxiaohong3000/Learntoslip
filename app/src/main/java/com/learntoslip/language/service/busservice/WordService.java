@@ -108,4 +108,8 @@ public class WordService {
         }
         return new ArrayList<Type>();
     }
+    public static String modifyWordDetail(Long id, String synonym, String wordClasses, String shorthand, String phrases, String otherInfo){
+        String wordJson=WordWebService.modifyWordDetail(id,synonym,wordClasses,shorthand,phrases,otherInfo);
+        return wordJson;
+    }
 }

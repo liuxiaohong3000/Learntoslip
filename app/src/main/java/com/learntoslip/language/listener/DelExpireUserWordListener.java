@@ -15,11 +15,14 @@ import com.learntoslip.language.service.busservice.UserWordService;
  */
 public class DelExpireUserWordListener implements View.OnClickListener {
     private Context context;
-
+    private Long userWordId;
     public DelExpireUserWordListener(Context context) {
         this.context = context;
     }
-
+    public DelExpireUserWordListener(Context context,Long userWordId) {
+        this.context = context;
+        this.userWordId = userWordId;
+    }
     @Override
     public void onClick(View v) {
         new Thread(networkTask).start();
@@ -45,7 +48,7 @@ public class DelExpireUserWordListener implements View.OnClickListener {
             // 在这里进行 http request.网络请求相关操作
             Message msg = new Message();
             Bundle data = new Bundle();
-            data.putString("value", UserWordService.delExpireUserWord(MindConfig.userId));
+            data.putString("value", UserWordService.delExpireUserWord(MindConfig.userId,userWordId));
             msg.setData(data);
             handler.sendMessage(msg);
         }

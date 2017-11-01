@@ -6,11 +6,13 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.learntoslip.language.R;
 import com.learntoslip.language.activity.WordDtailActivity;
+import com.learntoslip.language.listener.DelExpireUserWordListener;
 import com.learntoslip.language.model.UserWord;
 
 import java.util.List;
@@ -34,26 +36,36 @@ public class UserWordAdapter extends ArrayAdapter<UserWord> {
         View oneWordView = LayoutInflater.from(getContext()).inflate(R.layout.user_word_list_item, parent, false);
 
         // 获取ImageView和TextView
-        TextView nameView = (TextView) oneWordView.findViewById(R.id.user_word_name_textView);
+        final TextView nameView = (TextView) oneWordView.findViewById(R.id.user_word_name_textView);
         final TextView contentView = (TextView) oneWordView.findViewById(R.id.user_word_content_textView);
 
         nameView.setText(userWord.getWordName());
         String pnuc=userWord.getPronunciation()==null ? "" :userWord.getPronunciation();
         String trans=userWord.getTranslate()==null ? "":userWord.getTranslate();
-        final String content=pnuc+trans;
+
+        final String content="\n"+pnuc+"\n"+trans;
         if(content.length()>0){
             contentView.setText("显示内容");
             contentView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    contentView.setText(content);
+                    contentView.setText("");
+                    nameView.setText(userWord.getWordName()+content);
                 }
             });
         }
 
+        final View delButton=oneWordView.findViewById(R.id.del_user_word_btn);
+        delButton.setOnClickListener(new DelExpireUserWordListener(getContext(),userWord.getId()));
+        oneWordView.setOnLongClickListener(new OnLongClickListener(){
 
-
-        oneWordView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                delButton.setVisibility(View.VISIBLE);
+                return false;
+            }
+        });
+        nameView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

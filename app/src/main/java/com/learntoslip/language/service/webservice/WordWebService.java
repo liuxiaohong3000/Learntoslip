@@ -249,28 +249,26 @@ public class WordWebService {
         }
         return null;
     }
-    public static String delExpireUserWord(Long userId){
+    public static String delExpireUserWord(Long userId,Long userWordId){
         try {
-
-            /*Client client = Client.create();
-            client.setConnectTimeout(2000);
-            client.setReadTimeout(5000);
-
-            WebResource webResource = client.resource(WebServiceConfig.getUrl()+"userapi/deleteExpireWord");
-            MultivaluedMapImpl params = new MultivaluedMapImpl();
-            params.add("userId", userId);
-            ClientResponse response = webResource.queryParams(params).type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class);
-
-            if (response.getStatus() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + response.getStatus());
-            }
-
-            String output = response.getEntity(String.class);
-            System.out.println("Output from Server .... \n" + output);
-            return output;*/
             HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"userapi/deleteExpireWord");
             hr.addParam("userId", userId);
+            hr.addParam("userWordId", userWordId);
+            return hr.post(1000, readTimeOut, "utf-8", "utf-8");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static String modifyWordDetail(Long id, String synonym, String wordClasses, String shorthand, String phrases, String otherInfo){
+        try {
+            HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"wordapi/addWord");
+            hr.addParam("id", id);
+            hr.addParam("synonym", synonym);
+            hr.addParam("wordClasses", wordClasses);
+            hr.addParam("phrases", phrases);
+            hr.addParam("shorthand", shorthand);
+            hr.addParam("otherInfo", otherInfo);
             return hr.post(1000, readTimeOut, "utf-8", "utf-8");
         } catch (Exception e) {
             e.printStackTrace();

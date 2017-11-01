@@ -73,8 +73,8 @@ public class UserWordService {
      * 删除过期的关键词
      * @return
      */
-    public static String delExpireUserWord(Long userId){
-        String wordJson=WordWebService.delExpireUserWord(userId);
+    public static String delExpireUserWord(Long userId,Long userWordId){
+        String wordJson=WordWebService.delExpireUserWord(userId,userWordId);
         return wordJson;
     }
     /**

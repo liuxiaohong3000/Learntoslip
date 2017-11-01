@@ -47,7 +47,7 @@ public class WordWebServiceTest {
     }
     @Test
     public void delExpireUseWord() throws Exception {
-        System.out.println(JSON.toJSONString(WordWebService.delExpireUserWord(1L)));
+        System.out.println(JSON.toJSONString(WordWebService.delExpireUserWord(1L,25L)));
         //assertEquals(4, 2 + 2);
     }
 }

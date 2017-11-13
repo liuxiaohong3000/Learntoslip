@@ -23,8 +23,8 @@ public class WordService {
      * @param pageNum
      * @return
      */
-    public static String listWord(long typeId,int pageNum){
-        return WordWebService.listWord(typeId,pageNum);
+    public static String listWord(long typeId,long userId,int pageNum){
+        return WordWebService.listWord(typeId,userId,pageNum);
     }
 
     /**

@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import com.learntoslip.language.config.MindConfig;
 import com.learntoslip.language.model.Word;
 import com.learntoslip.language.service.busservice.WordService;
 
@@ -75,7 +76,7 @@ public class IndexListRun implements  Runnable{
         // 在这里进行 http request.网络请求相关操作
         Message msg = new Message();
         Bundle data = new Bundle();
-        data.putString("value", WordService.listWord(listOpera.getTypeId(),listOpera.getPageNum()));
+        data.putString("value", WordService.listWord(listOpera.getTypeId(), MindConfig.userId,listOpera.getPageNum()));
         msg.setData(data);
         wordListNetworkHandler.sendMessage(msg);
     }

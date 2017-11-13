@@ -33,7 +33,7 @@ public class WordWebService {
         }
         return null;
     }
-    public static String listWord(long typeId,int pageNum){
+    public static String listWord(long typeId,long userId,int pageNum){
         try {
 
             /*Client client = Client.create();
@@ -56,6 +56,7 @@ public class WordWebService {
             String output = response.getEntity(String.class);*/
             HttpRequest hr = new HttpRequest(WebServiceConfig.getUrl()+"wordapi/words");
             hr.addParam("typeId", typeId);
+            hr.addParam("userId", userId);
             hr.addParam("pageNum", pageNum);
             return hr.get(1000, readTimeOut, "utf-8", "utf-8");
 

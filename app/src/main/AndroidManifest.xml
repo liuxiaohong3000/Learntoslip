@@ -52,8 +52,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.WordDtailActivity">
-        </activity>
+        <activity android:name=".activity.WordDtailActivity"/>
+        <activity android:name=".activity.WordHtmlDtailActivity"/>
         <service
                 android:name="com.learntoslip.language.service.webservice.gt.WordPushService"
                 android:exported="true"

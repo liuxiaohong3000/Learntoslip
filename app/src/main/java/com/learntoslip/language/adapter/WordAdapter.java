@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.learntoslip.language.R;
 import com.learntoslip.language.activity.WordDtailActivity;
+import com.learntoslip.language.activity.WordHtmlDtailActivity;
 import com.learntoslip.language.model.Word;
 
 import java.util.List;
@@ -58,8 +59,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
             public void onClick(View v) {
 
                 //  初始化一个准备跳转到TeacherDetailActivity的Intent
-                Intent intent = new Intent(getContext(), WordDtailActivity.class);
-
+                Intent intent = null;
+                if(word.getShowType()==1){
+                    intent = new Intent(getContext(), WordHtmlDtailActivity.class);
+                }else{
+                    intent = new Intent(getContext(), WordDtailActivity.class);
+                }
                 // 往Intent中传入Teacher相关的数据，供TeacherDetailActivity使用
                 intent.putExtra("wordId", word.getId());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

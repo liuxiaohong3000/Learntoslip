@@ -41,7 +41,11 @@ public class Word implements Serializable{
 	*  创建时间
 	*/
 	private Date createTime;
-	
+
+	/**
+	 *  显示类型
+	 */
+	private Integer showType;
 	public void setId(Long id){
 		this.id = id;
 	}
@@ -103,6 +107,14 @@ public class Word implements Serializable{
 
 	public void setPronunciation(String pronunciation) {
 		this.pronunciation = pronunciation;
+	}
+
+	public Integer getShowType() {
+		return showType;
+	}
+
+	public void setShowType(Integer showType) {
+		this.showType = showType;
 	}
 
 	@Override
